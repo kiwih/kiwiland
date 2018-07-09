@@ -35,7 +35,7 @@ WantedBy=multi-user.target
 ```
 
 Then, you can expose the go server to the internet via nginx, if you'd like. Mine is only exposed to the local intranet.
-Filename `/etx/nginx/sites-available/kiwi.land`
+Filename `/etc/nginx/sites-available/kiwi.land`
 ```
 server {
         listen 80 default_server;
