@@ -1,0 +1,22 @@
+{{define "indexPage"}}
+{{template "htmlhead" .}}
+<h1>Kiwiland!</h1>
+{{if .Username}}
+<a href='{{GetSignOutURL}}'>Sign Out</a><br>
+<hr>
+<a href='{{GetTVCommandURL "powerstatus"}}'>TV Power Status</a><br>
+<a href='{{GetTVCommandURL "poweron"}}'>TV Power On</a><br>
+<a href='{{GetTVCommandURL "poweroff"}}'>TV Power Off</a><br>
+<a href='{{GetTVCommandURL "hdmi4"}}'>TV select HDMI4</a><br>
+<a href='{{GetTVCommandURL "hdmi2"}}'>TV select HDMI2</a><br>
+<a href='{{GetTVCommandURL "hdmi1"}}'>TV select HDMI1</a><br>
+<!--<a href='{{GetTVCommandURL "volumeup"}}'>TV Volume Up</a><br>
+<a href='{{GetTVCommandURL "volumedown"}}'>TV Volume Down</a><br>-->
+<hr>
+<a href='{{GetToshibaCommandURL "wol"}}'>Toshiba Wake On Lan</a><br>
+{{else}}
+<img src="/public/kiwi.png" width="250px" /><br>
+<h4>I am Kiwi<br>hear me roar<br>I'm too pointy<br>to ignore<br></h4> 
+{{end}}
+</html>
+{{end}}

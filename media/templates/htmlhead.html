@@ -1,0 +1,28 @@
+{{define "htmlhead"}}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>kiwiland!</title>
+</head>
+<center>
+{{if or .ErrorMessages .NotificationMessages}}
+    {{range $index, $error := .ErrorMessages}}
+        <p>Error: {{$error}}</p>
+    {{end}}
+    {{range $index, $notification := .NotificationMessages}}
+        <p>{{$notification}}</p>
+    {{end}}
+<hr>
+{{end}}
+{{if .Username}}<h3>hello {{.Username}}</h3>
+{{else}}You should sign in!<form action="{{GetSignInURL}}" method="post">
+        <input name="Username" id="Username" type="text" placeholder="Username"><br>
+        <input name="Password" id="Password" type="password" placeholder="Password"><br>
+        <label for="Remember">
+            <input id="Remember" type="checkbox"> Remember me
+        </label><br>
+        <button type="submit">Sign in</button>
+</form><hr>
+{{end}}
+
+{{end}}
