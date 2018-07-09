@@ -4,7 +4,17 @@ This program is a small utility I wrote to run on a raspberry pi which is connec
 
 I wanted to be able to control the TV's HDMI CEC capabilities (it is a modern-ish Sony Bravia) as well as run wake on lan commands to my actual media PC (an old Toshiba laptop).
 
+## Installation
+
+You will need to `apt install cec-utils`. You will also need to install `wakeonlan`, but a raspberry pi has this preinstalled.
+
+Then, you can `go get` and `go build` this project. It does not have any other dependencies. 
+
+## Configuration
+
 This program will start a server called kiwiland. You can sign into it with credentials you will provide on first run. You should also provide a non-default cookie salt in the appropriate environment variable (see the startup logs).
+
+You will want to change the `wakeonlan` MAC address, this is located at `/kiwiserver/wolcommand.go`.
 
 You can make this server run automatically using systemd. This is the service file I made:
 
